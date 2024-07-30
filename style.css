@@ -68,7 +68,9 @@ select {
   color: #340436;
 }
 
+/* Select içeriğinin sonrasına hemen content ekler.*/
 .select:after {
+  /* İçerik olarak aşağıyı gösteren bir üçgen simgesi ekler */
   content: '\25BC';
   position: absolute;
   background-color: #340436;
@@ -78,6 +80,9 @@ select {
   padding: 1rem;
   cursor: pointer;
   transition: 0.5s ease;
+
+  /*icon'a tıklayıncaki tepkiyi kapatır ve select'in çalışmasına izin verir.*/
+  pointer-events: none;
 }
 
 .select:hover:after {
@@ -92,7 +97,7 @@ select {
 }
 
 .todo-list {
-  min-height: 30%;
+  min-width: 30%;
   list-style: none;
 }
 
@@ -104,7 +109,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25rem;
+  transition: all 0.5s ease;
 }
 
 .todo li {
@@ -129,6 +134,8 @@ select {
 .fa-check-circle,
 .fa-minus-circle {
   font-size: 1.5rem;
+  /* Iconların tıklanırlığını kaldırır ve buton'un özelliklerini kullanmaya izin verir. */
+  pointer-events: none;
 }
 
 .alert-wrapper {
@@ -152,4 +159,15 @@ select {
 }
 .alert-success {
   background-color: #5ebe92;
+}
+
+/* animasyonlu silme işlemi sağlar.*/
+.fall {
+  transform: translateY(8rem);
+  opacity: 0;
+}
+
+.completed {
+  opacity: 0.4;
+  text-decoration: line-through;
 }
